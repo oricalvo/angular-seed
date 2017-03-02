@@ -14,8 +14,14 @@
   },
   "files": [
     "app/main-aot.ts",
-    "app/admin/module-aot.ts",
-    "app/about/module-aot.ts",
     "app/globals.ts"
+  ],
+  "include": [
+    "app/**/module-aot.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "aot",
+    "build/assets/main-aot.ts"
   ]
 }

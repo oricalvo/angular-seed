@@ -11,6 +11,10 @@ export class AppComponent {
   constructor(private router: Router) {
   }
 
+  ngOnInit() {
+    this.router.navigate(["home"]);
+  }
+
   loadModule() {
     this.router.navigate(["/admin"]);
   }

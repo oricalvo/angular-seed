@@ -1,18 +1,5 @@
-@import "../styles/component";
-
 :host {
-  @include component;
-}
-
-.app-menu {
-  background-color: black;
-  color: white;
-  padding: 0.5em;
-  font-size: 1.25em;
   display: flex;
-  flex-direction: row;
-
-  my-clock {
-    margin-left: auto;
-  }
+  flex-direction: column;
+  padding: 1em;
 }

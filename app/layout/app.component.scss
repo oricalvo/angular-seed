@@ -1,25 +1,36 @@
 @import "../styles/component";
 
 :host {
-  @include component;
+  display: flex;
+  flex-direction: column;
 }
 
 .app-menu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   background-color: black;
   color: white;
   padding: 0.5em;
   font-size: 1.25em;
-  display: flex;
-  flex-direction: row;
 
   my-clock {
     margin-left: auto;
   }
 
+  .logo {
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-right: 1em;
+    cursor: pointer;
+  }
+
   a {
+    vertical-align: middle;
     margin-left: 1em;
     color: white;
     text-decoration: none;
+    display: inline-block;
     padding: 0 0.25em;
 
     &:hover {

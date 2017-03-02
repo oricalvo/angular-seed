@@ -13,9 +13,11 @@
   },
   "files": [
     "app/main.ts",
-    "app/admin/module.ts",
-    "app/about/module.ts",
-    "app/globals.ts"
+    "app/globals.ts",
+    "build/main.ts"
+  ],
+  "include": [
+    "app/**/module.ts"
   ],
   "exclude": [
     "node_modules",

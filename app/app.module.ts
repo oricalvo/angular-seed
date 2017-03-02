@@ -2,24 +2,12 @@ import {
     NgModule, NgModuleFactoryLoader
 }      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {AppComponent}  from './components/app.component';
+import {AppComponent}  from './layout/app.component';
 import {ClockComponent} from "./components/clock.component";
 import {FormsModule} from "@angular/forms";
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from "./components/home.component";
-import {ModuleLoader} from "./moduleLoader";
-
-export const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
-    {
-        path: 'admin',
-        loadChildren: "/app/admin/module#AdminModule",
-    },
-    {
-        path: 'about',
-        loadChildren: "/app/about/module#AboutModule",
-    },
-];
+import {ModuleLoader} from "./common/moduleLoader";
+import {appRoutes} from "./routes";
 
 @NgModule({
     imports: [
@@ -30,7 +18,6 @@ export const appRoutes: Routes = [
     declarations: [
         AppComponent,
         ClockComponent,
-        HomeComponent
     ],
     bootstrap: [AppComponent],
     providers: [

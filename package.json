@@ -2,8 +2,8 @@
   "name": "angular2-min-seed",
   "version": "1.0.0",
   "scripts": {
-    "start": "node build/dev.js",
-    "prod": "node build/prod.js"
+    "start": "bu dev",
+    "prod": "bu prod"
   },
   "licenses": [
     {

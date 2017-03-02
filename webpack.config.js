@@ -4,6 +4,7 @@ const webpack = require("webpack");
 module.exports = {
     entry: {
         main: './aot/phase2/app/main-aot.js',
+        home: "./aot/phase2/app/home/module-aot.js",
         admin: "./aot/phase2/app/admin/module-aot.js",
         about: "./aot/phase2/app/about/module-aot.js",
     },

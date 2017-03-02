@@ -2,12 +2,12 @@ import {Component, SystemJsNgModuleLoader, Compiler} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: "my-home",
+  selector: "my-home-main",
   moduleId: module.id,
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
+  templateUrl: "./main.component.html",
+  styleUrls: ["./main.component.css"]
 })
-export class HomeComponent {
+export class MainComponent {
   constructor() {
   }
 
