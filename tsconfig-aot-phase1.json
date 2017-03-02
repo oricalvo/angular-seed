@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig",
+  "angularCompilerOptions": {
+    "genDir": "aot/phase1",
+    "skipMetadataEmit" : true
+  }
+}

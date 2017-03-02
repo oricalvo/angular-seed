@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Angular 2 MinSeed</title>
+
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app/styles/site.css">
+
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/tslib/tslib.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="app/globals.js"></script>
+  </head>
+  <body>
+    <my-app>Loading...</my-app>
+
+    <script>window.module = 'aot';</script>
+
+    <script src="dist/main.bundle.js"></script>
+  </body>
+</html>

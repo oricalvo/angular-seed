@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "lib": ["ES6", "DOM"],
+    "outDir": "aot/phase2",
+    "noEmitHelpers": true
+  },
+  "files": [
+    "app/main-aot.ts",
+    "app/admin/module-aot.ts",
+    "app/about/module-aot.ts",
+    "app/globals.ts"
+  ]
+}
