@@ -12,6 +12,11 @@ export class ModuleLoader extends SystemJsNgModuleLoader {
             return super.load(path);
         }
 
+        let parts = path.split("#");
+        let url = parts[0];
+        let moduleName = parts[1];
+        //return loadModule(moduleName);
+
         console.log("ModuleLoader.load: " + path);
 
         return new Promise((resolve, reject)=> {
@@ -50,3 +55,26 @@ export class ModuleLoader extends SystemJsNgModuleLoader {
         globals.modules[moduleName] = Promise.resolve(moduleFactory);
     }
 }
+
+// function loadModule(name: string) {
+//     return new Promise((resolve, reject)=> {
+//         if (name == "HomeModule") {
+//             (<any>require).ensure(["../../aot/phase1/app/home/module.ngfactory"], function () {
+//                 const factory = require("../../aot/phase1/app/home/module.ngfactory");
+//                 resolve(factory[name + "NgFactory"]);
+//             }, "home");
+//         }
+//         else if (name == "AdminModule") {
+//             (<any>require).ensure(["../../aot/phase1/app/admin/module.ngfactory"], function () {
+//                 const factory = require("../../aot/phase1/app/admin/module.ngfactory");
+//                 resolve(factory[name + "NgFactory"]);
+//             }, "admin");
+//         }
+//         else if (name == "AboutModule") {
+//             (<any>require).ensure(["../../aot/phase1/app/about/module.ngfactory"], function () {
+//                 const factory = require("../../aot/phase1/app/about/module.ngfactory");
+//                 resolve(factory[name + "NgFactory"]);
+//             }, "about");
+//         }
+//     });
+// }

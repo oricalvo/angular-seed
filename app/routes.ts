@@ -1,5 +1,7 @@
 import {Routes} from "@angular/router";
 
+const home = "home";
+
 export const appRoutes: Routes = [
     {
         path: 'home',
@@ -14,3 +16,4 @@ export const appRoutes: Routes = [
         loadChildren: "/app/about/module#AboutModule",
     },
 ];
+

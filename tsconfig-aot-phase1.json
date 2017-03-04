@@ -11,17 +11,10 @@
     "lib": ["ES6", "DOM"],
     "noEmitHelpers": true
   },
-  "files": [
-    "app/main.ts",
-    "app/globals.ts"
-  ],
   "include": [
+    "app/main.ts",
+    "app/globals.ts",
     "app/**/module.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "aot",
-    "build/assets/main-aot.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "aot/phase1",

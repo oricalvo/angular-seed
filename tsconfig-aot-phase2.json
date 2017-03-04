@@ -12,16 +12,9 @@
     "outDir": "aot/phase2",
     "noEmitHelpers": true
   },
-  "files": [
-    "app/main-aot.ts",
-    "app/globals.ts"
-  ],
   "include": [
+    "app/main-aot.ts",
+    "app/globals.ts",
     "app/**/module-aot.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "aot",
-    "build/assets/main-aot.ts"
   ]
 }
