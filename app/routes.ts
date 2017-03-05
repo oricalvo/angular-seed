@@ -15,5 +15,9 @@ export const appRoutes: Routes = [
         path: 'about',
         loadChildren: "/app/about/module#AboutModule",
     },
+    {
+        path: 'products',
+        loadChildren: "/app/products/module#ProductsModule",
+    },
 ];
 

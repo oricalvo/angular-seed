@@ -11,17 +11,14 @@
     "lib": ["ES6", "DOM"],
     "noEmitHelpers": true
   },
-  "files": [
-    "app/main.ts",
-    "app/globals.ts",
-    "build/main.ts"
-  ],
   "include": [
-    "app/**/module.ts"
+    "./app/globals.ts",
+    "./app/*main.ts",
+    "./app/*app.module.ts",
+    "./app/**/module.ts",
+    "./app/**/*.ngfactory.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "aot",
-    "build/assets/main-aot.ts"
-  ]
+  "angularCompilerOptions": {
+    "skipMetadataEmit" : true
+  }
 }

@@ -5,7 +5,7 @@ const {searchGlob} = require("build-utils/fs");
 module.exports = Promise.resolve().then(()=> {
     const config = {
         entry: {
-            main: './aot/phase2/app/main-aot.js',
+            main: './aot/app/main.js',
         },
         output: {
             path: path.resolve(__dirname, './dist'),
@@ -20,7 +20,7 @@ module.exports = Promise.resolve().then(()=> {
         ]
     };
 
-    const modulesDirPath = "./aot/phase2/aot/phase1/app/"
+    const modulesDirPath = "./aot/app/"
     const moduleFileName = "module.ngfactory.js";
     return searchGlob(`${modulesDirPath}**/${moduleFileName}`).then(files => {
         for (let file of files) {
