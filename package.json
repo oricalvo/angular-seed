@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^2.4.8",
     "@angular/platform-server": "^2.4.8",
     "@angular/router": "^3.4.8",
-    "build-utils": "^1.0.25",
+    "build-utils": "^1.0.27",
     "reflect-metadata": "^0.1.8",
     "rxjs": "^5.0.3",
     "shelljs": "^0.7.5",
