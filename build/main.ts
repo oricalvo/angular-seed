@@ -3,6 +3,8 @@ import * as path from "path";
 import {deleteDirectory, appendFile, copyGlob, copyFile, deleteFile} from "build-utils/fs";
 import {exec} from "build-utils/process";
 import {appRoutes} from "../app/routes";
+import * as open from "open";
+import * as configurator from "../server/config";
 
 cli.command("dev", dev);
 cli.command("prod", prod);
@@ -10,9 +12,11 @@ cli.command("prod", prod);
 cli.run();
 
 export async function dev() {
+    const config = await configurator.loadFrom(path.resolve(__dirname, "../server/config.json"));
     await exec("node_modules/.bin/tsc");
     await exec("node_modules/.bin/node-sass --recursive ./app --output ./app");
-    await exec("node_modules/.bin/sjs");
+    exec("node server/main");
+    open(`http://localhost:${config.httpPort}`);
 }
 
 export async function compileTS() {

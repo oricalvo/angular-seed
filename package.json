@@ -35,13 +35,10 @@
     "@types/node": "^7.0.5",
     "@types/systemjs": "^0.20.0",
     "node-sass": "^4.5.0",
-    "rollup": "^0.41.4",
-    "rollup-plugin-commonjs": "^7.0.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-uglify": "^1.0.1",
+    "nopack": "^1.1.2",
+    "open": "0.0.5",
     "shelljs": "^0.7.5",
     "systemjs": "^0.20.9",
-    "systemjs-server": "^1.1.69",
     "typescript": "^2.2.0",
     "webpack": "^2.2.1"
   }

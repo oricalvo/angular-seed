@@ -2,6 +2,7 @@ import * as express from "express";
 import * as path from "path";
 import * as exphbs from "express-handlebars";
 import * as configurator from "./config";
+import * as nopack from "nopack";
 import "tslib";
 import {Config} from "./config";
 import {EnvType} from "./config";
@@ -23,6 +24,7 @@ async function init() {
     const viewEngine = createViewEngine(app);
 
     registerStatic(app);
+    nopack.setup(app);
     registerNotFoundForFileLikeUrls(app);
     registerIndexHtmlForAnyGETRequest(app);
     registerNotAllowed(app);
