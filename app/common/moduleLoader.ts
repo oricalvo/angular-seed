@@ -38,15 +38,17 @@ export class ModuleLoader extends SystemJsNgModuleLoader {
                     parts.pop();
                 }
 
-                url = "dist/" + parts.join(".") + ".bundle.js";
+                url = parts.join(".") + ".bundle.js";
             }
 
             return SystemJS.import(url).then(m => {
-                if(globals.modules[ngModuleName]) {
-                    globals.modules[ngModuleName].then(factory => {
-                        resolve(factory);
-                    });
+                if(!globals.modules[ngModuleName]) {
+                    throw new Error("Didn't find globals.modules[" + ngModuleName + "] pending promise");
                 }
+
+                globals.modules[ngModuleName].then(factory => {
+                    resolve(factory);
+                });
             });
         });
     }
@@ -55,26 +57,3 @@ export class ModuleLoader extends SystemJsNgModuleLoader {
         globals.modules[moduleName] = Promise.resolve(moduleFactory);
     }
 }
-
-// function loadModule(name: string) {
-//     return new Promise((resolve, reject)=> {
-//         if (name == "HomeModule") {
-//             (<any>require).ensure(["../../aot/phase1/app/home/module.ngfactory"], function () {
-//                 const factory = require("../../aot/phase1/app/home/module.ngfactory");
-//                 resolve(factory[name + "NgFactory"]);
-//             }, "home");
-//         }
-//         else if (name == "AdminModule") {
-//             (<any>require).ensure(["../../aot/phase1/app/admin/module.ngfactory"], function () {
-//                 const factory = require("../../aot/phase1/app/admin/module.ngfactory");
-//                 resolve(factory[name + "NgFactory"]);
-//             }, "admin");
-//         }
-//         else if (name == "AboutModule") {
-//             (<any>require).ensure(["../../aot/phase1/app/about/module.ngfactory"], function () {
-//                 const factory = require("../../aot/phase1/app/about/module.ngfactory");
-//                 resolve(factory[name + "NgFactory"]);
-//             }, "about");
-//         }
-//     });
-// }

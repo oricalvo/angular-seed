@@ -1,9 +1,9 @@
 import {readJSONFile} from "build-utils/fs";
 
-export enum EnvType {
-    DEV,
-    PROD
-};
+export class EnvType {
+    static DEV: string = "DEV";
+    static PROD: string = "PROD";
+}
 
 export interface Config {
     version?: string,

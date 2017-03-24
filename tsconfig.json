@@ -9,10 +9,10 @@
     "removeComments": false,
     "noImplicitAny": false,
     "lib": ["ES6", "DOM"],
-    "noEmitHelpers": true
+    "importHelpers": true
   },
   "include": [
-    "./app/globals.ts",
+    "./app/globals.d.ts",
     "./app/*main.ts",
     "./app/*app.module.ts",
     "./app/**/module.ts",

@@ -30,13 +30,12 @@
   "devDependencies": {
     "@types/node": "^7.0.5",
     "@types/systemjs": "^0.20.0",
-    "tslib": "^1.6.0",
     "build-utils": "^1.0.27",
     "node-sass": "^4.5.0",
-    "nopack": "^1.1.2",
+    "nopack": "^1.1.12",
     "open": "0.0.5",
     "shelljs": "^0.7.5",
-    "systemjs": "^0.20.9",
+    "tslib": "^1.6.0",
     "typescript": "^2.2.0",
     "webpack": "^2.2.1"
   }

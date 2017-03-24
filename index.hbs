@@ -7,21 +7,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="app/styles/site.css">
+      {{#if isProduction}}
+          <link rel="stylesheet" href="site.css">
+      {{else}}
+          <link rel="stylesheet" href="app/styles/site.css">
+      {{/if}}
   </head>
   <body>
-    <my-app>Loading...</my-app>
+    <my-app></my-app>
 
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/tslib/tslib.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="app/globals.js"></script>
-    <script src="node_modules/nopack/client/loader.js"></script>
+    <script>
+        var globals = {
+            modules: {}
+        };
 
+    </script>
     {{#if isProduction}}
-        <script src="dist/lib.bundle.js"></script>
-        <script src="dist/app.bundle.js"></script>
+        <script src="system.js"></script>
+        <script src="lib.bundle.js"></script>
+        <script src="app.bundle.js"></script>
+    {{else}}
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <script src="node_modules/nopack/client/loader.js"></script>
     {{/if}}
   </body>
 </html>
