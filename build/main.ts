@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import * as cli from "build-utils/cli";
 import * as path from "path";
 import {deleteDirectory, appendFile, copyGlob, copyFile, deleteFile} from "build-utils/fs";
@@ -41,7 +42,6 @@ export async function prod() {
     console.log();
     console.log("Running AOT");
     await exec("node_modules/.bin/ngc -p ./aot");
-    console.log("DONE");
 
     console.log();
     console.log("Fix AOT factories");
@@ -68,6 +68,8 @@ export async function prod() {
     await copyGlob("./app/styles/**/*.css", "./dist");
     await copyFile("./index.hbs", "./dist/index.hbs");
     await copyFile("./node_modules/systemjs/dist/system.js", "./dist/system.js");
+    await copyFile("./node_modules/zone.js/dist/zone.js", "./dist/zone.js");
+    await copyFile("./node_modules/reflect-metadata/Reflect.js", "./dist/Reflect.js");
 
     console.log();
     console.log("Running server");
@@ -81,6 +83,10 @@ export async function prod() {
 }
 
 function fixNgFactory(route) {
+    if(!route.loadChildren) {
+        return;
+    }
+
     console.log("Fix factory for route: " + route.loadChildren);
 
     const parts = route.loadChildren.split("#");

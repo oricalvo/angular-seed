@@ -18,11 +18,14 @@
 
     <script>
         var globals = {
+            isProduction: {{isProduction}},
             modules: {}
         };
-
     </script>
+
     {{#if isProduction}}
+        <script src="Reflect.js"></script>
+        <script src="zone.js"></script>
         <script src="system.js"></script>
         <script src="lib.bundle.js"></script>
         <script src="app.bundle.js"></script>

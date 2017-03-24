@@ -1,11 +1,12 @@
 import {Routes} from "@angular/router";
+import {MainComponent} from "./home/components/main.component";
 
 const home = "home";
 
 export const appRoutes: Routes = [
     {
         path: 'home',
-        loadChildren: "/app/home/module#HomeModule",
+        component: MainComponent
     },
     {
         path: 'admin',

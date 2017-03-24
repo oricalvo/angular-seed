@@ -58,6 +58,8 @@ function registerNotFoundForFileLikeUrls(app) {
 
 function registerIndexHtmlForAnyGETRequest(app) {
     app.get("*", function (req, res) {
+        res.setHeader("Cache-Control", "public, max-age=900");
+
         const indexHtmlFilePath = path.join(config.basePath, "index.hbs");
         res.render(indexHtmlFilePath, {
             config: config,
@@ -99,7 +101,9 @@ function createViewEngine(app) {
 }
 
 function registerStatic(app) {
-    var staticEx = express.static(path.join(config.basePath, "."));
+    var staticEx = express.static(path.join(config.basePath, "."), {
+        maxAge: 90000,
+    });
 
     app.use('/', function (req, res, next) {
         console.log("STATIC: " + req.url);

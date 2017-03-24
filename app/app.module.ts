@@ -8,6 +8,7 @@ import {FormsModule} from "@angular/forms";
 import { RouterModule, Routes } from '@angular/router';
 import {ModuleLoader} from "./common/moduleLoader";
 import {appRoutes} from "./routes";
+import {MainComponent} from "./home/components/main.component";
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import {appRoutes} from "./routes";
     declarations: [
         AppComponent,
         ClockComponent,
+        MainComponent
     ],
     bootstrap: [AppComponent],
     providers: [

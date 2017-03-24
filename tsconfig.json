@@ -17,7 +17,8 @@
     "./app/*app.module.ts",
     "./app/**/module.ts",
     "./app/**/*.ngfactory.ts",
-    "./server/main.ts"
+    "./server/main.ts",
+    "./build/main.ts"
   ],
   "angularCompilerOptions": {
     "skipMetadataEmit" : true
