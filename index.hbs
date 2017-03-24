@@ -19,6 +19,9 @@
     <script src="app/globals.js"></script>
     <script src="node_modules/nopack/client/loader.js"></script>
 
-    <!--<script src="dist/main.bundle.js"></script>-->
+    {{#if isProduction}}
+        <script src="dist/lib.bundle.js"></script>
+        <script src="dist/app.bundle.js"></script>
+    {{/if}}
   </body>
 </html>

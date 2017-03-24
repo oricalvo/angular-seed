@@ -24,7 +24,11 @@ async function init() {
     const viewEngine = createViewEngine(app);
 
     registerStatic(app);
-    nopack.setup(app);
+
+    if(config.env == EnvType.DEV) {
+        nopack.setup(app);
+    }
+
     registerNotFoundForFileLikeUrls(app);
     registerIndexHtmlForAnyGETRequest(app);
     registerNotAllowed(app);

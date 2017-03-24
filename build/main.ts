@@ -24,36 +24,51 @@ export async function compileTS() {
 }
 
 export async function prod() {
-    await deleteDirectory("./aot");
-    await deleteDirectory("./dist");
+    const config = await configurator.loadFrom(path.resolve(__dirname, "../server/config.json"));
 
-    console.log("Copying source files to AOT folder");
-    await copyGlob("./app/**/*.ts", "./aot/app");
-    await copyGlob("./app/**/*.scss", "./aot/app");
-    await copyGlob("./app/**/*.html", "./aot/app");
-    await deleteFile("./aot/app/main.ts");
-    await copyFile("./tsconfig.json", "./aot/tsconfig.json");
+    // await deleteDirectory("./aot");
+    // await deleteDirectory("./dist");
+    //
+    // console.log("Copying source files to AOT folder");
+    // await copyGlob("./app/**/*.ts", "./aot/app");
+    // await copyGlob("./app/**/*.scss", "./aot/app");
+    // await copyGlob("./app/**/*.html", "./aot/app");
+    // await deleteFile("./aot/app/main.ts");
+    // await copyFile("./tsconfig.json", "./aot/tsconfig.json");
+    //
+    // console.log();
+    // console.log("Compiling SASS");
+    // compileTS();
+    //
+    // console.log();
+    // console.log("Running AOT");
+    // await exec("node_modules/.bin/ngc -p ./aot");
+    // console.log("    DONE");
+    //
+    // console.log();
+    // console.log("Fix AOT factories");
+    // await fixAOT();
+    //
+    // console.log();
+    // console.log("Compiling AOT");
+    // await copyFile("./build/aot/main.ts", "./aot/app/main.ts");
+    // await exec("node_modules/.bin/tsc -p ./aot");
+    //
+    // console.log();
+    // console.log("Bundling");
+    // await exec("node_modules/.bin/webpack");
 
     console.log();
-    console.log("Compiling SASS");
-    compileTS();
+    console.log("Copying server");
+    await copyGlob("./server/**", "./dist/server");
 
-    console.log();
-    console.log("Running AOT");
-    await exec("node_modules/.bin/ngc -p ./aot");
-
-    console.log();
-    console.log("Fix AOT factories");
-    await fixAOT();
-
-    console.log();
-    console.log("Compiling AOT");
-    await copyFile("./build/aot/main.ts", "./aot/app/main.ts");
-    await exec("node_modules/.bin/tsc -p ./aot");
-
-    console.log();
-    console.log("Bundling");
-    await exec("node_modules/.bin/webpack");
+    // console.log();
+    // console.log("Running server");
+    // exec("node server/main");
+    //
+    // console.log();
+    // console.log("Openning browser");
+    // open(`http://localhost:${config.httpPort}`);
 }
 
 function fixNgFactory(route) {
