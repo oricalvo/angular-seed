@@ -1,6 +1,7 @@
 import {NgModule}      from '@angular/core';
-import {AppComponent}  from './components/app.component';
+import {AppComponent}  from './components/main.component';
 import {Routes, RouterModule} from "@angular/router";
+import {CommonModule} from "@angular/common";
 
 const routes: Routes = [
     { path: '',  component: AppComponent },
@@ -8,6 +9,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
+        CommonModule,
         RouterModule.forChild(routes)
     ],
     declarations: [

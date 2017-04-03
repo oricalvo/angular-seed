@@ -18,7 +18,7 @@ module.exports = Promise.resolve().then(() => {
             publicPath: "dist/",
         },
         plugins: [
-            new webpack.optimize.UglifyJsPlugin(),
+            new webpack.optimize.UglifyJsPlugin({ output: {comments: false} }),
             new webpack.optimize.CommonsChunkPlugin({
                 names: ['app'],
             }),

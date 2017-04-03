@@ -18,7 +18,8 @@
     "./app/**/module.ts",
     "./app/**/*.ngfactory.ts",
     "./server/main.ts",
-    "./build/main.ts"
+    "./build/main.ts",
+    "./node_modules/t-rex/globals.d.ts"
   ],
   "angularCompilerOptions": {
     "skipMetadataEmit" : true
