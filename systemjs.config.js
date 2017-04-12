@@ -9,7 +9,7 @@ SystemJS.config({
         "@angular/forms": "node_modules/@angular/forms/bundles/forms.umd.js",
         "rxjs": "node_modules/rxjs",
         "tslib": "node_modules/tslib/tslib.js",
-        "t-rex": "node_modules/t-rex",
+        "t-rex": "node_modules/t-rex/t-rex.umd.js",
     },
     packages: {
         "app": {
@@ -17,10 +17,6 @@ SystemJS.config({
         },
         "rxjs": {
             main: "Rx.js",
-            defaultExtension: "js",
-        },
-        "t-rex": {
-            main: "index.js",
             defaultExtension: "js",
         },
     },

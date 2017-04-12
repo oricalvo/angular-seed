@@ -136,10 +136,4 @@ export async function bundleVendors() {
         const builder = new SystemJSBuilder('/', 'systemjs.config.js');
         await builder.bundle('rxjs', 'bundles/rxjs.bundle.js');
     }
-
-    if (!await fs.fileExists('bundles/t-rex.bundle.js')) {
-        logger.info("    t-rex");
-        const builder = new SystemJSBuilder('/', 'systemjs.config.js');
-        await builder.bundle('t-rex', 'bundles/t-rex.bundle.js');
-    }
 }
