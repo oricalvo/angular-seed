@@ -27,7 +27,7 @@
     "moment": "2.18.1",
     "reflect-metadata": "0.1.10",
     "rxjs": "5.3.0",
-    "t-rex": "1.0.6",
+    "t-rex": "1.0.9",
     "winston": "2.3.1",
     "zone.js": "0.8.5"
   },
