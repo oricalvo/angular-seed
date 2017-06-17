@@ -42,7 +42,7 @@
     "systemjs": "^0.20.12",
     "systemjs-builder": "^0.16.4",
     "tslib": "^1.6.0",
-    "typescript": "^2.2.2",
+    "typescript": "2.3.4",
     "webpack": "^2.3.3"
   }
 }

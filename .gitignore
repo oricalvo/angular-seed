@@ -13,4 +13,3 @@ server/**/*.js
 /aot
 /dist
 /bundles
-yarn.lock
